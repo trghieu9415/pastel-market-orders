@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { Order } from "@/types/order";
 import OrderStatusBadge from "./OrderStatusBadge";
 import { formatCurrency } from "@/utils/format";
@@ -89,10 +90,12 @@ const OrderCard: React.FC<OrderCardProps> = ({ order }) => {
             <Separator className="my-4" />
 
             <div className="flex flex-wrap justify-between gap-2">
-              <Button variant="outline" size="sm" className="flex-1">
-                <ExternalLink className="h-4 w-4 mr-2" />
-                Xem chi tiết
-              </Button>
+              <Link to={`/orders/${order.id}`} className="flex-1">
+                <Button variant="outline" size="sm" className="w-full">
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  Xem chi tiết
+                </Button>
+              </Link>
               <Button variant="secondary" size="sm" className="flex-1">
                 <MessageSquare className="h-4 w-4 mr-2" />
                 Liên hệ người mua
