@@ -96,10 +96,12 @@ const OrderCard: React.FC<OrderCardProps> = ({ order }) => {
                   Xem chi tiết
                 </Button>
               </Link>
-              <Button variant="secondary" size="sm" className="flex-1">
-                <MessageSquare className="h-4 w-4 mr-2" />
-                Liên hệ người mua
-              </Button>
+              <Link to={`/orders/${order.id}/contact`} className="flex-1">
+                <Button variant="secondary" size="sm" className="w-full">
+                  <MessageSquare className="h-4 w-4 mr-2" />
+                  Liên hệ người mua
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

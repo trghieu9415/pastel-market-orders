@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useOrders } from "@/context/OrderContext";
@@ -218,10 +217,12 @@ const OrderDetail = () => {
                 <Separator className="my-4" />
                 
                 <div className="space-y-3">
-                  <Button className="w-full" variant="default">
-                    <MessageSquare className="mr-2 h-4 w-4" />
-                    Liên hệ người mua
-                  </Button>
+                  <Link to={`/orders/${order.id}/contact`}>
+                    <Button className="w-full" variant="default">
+                      <MessageSquare className="mr-2 h-4 w-4" />
+                      Liên hệ người mua
+                    </Button>
+                  </Link>
                   <Button className="w-full" variant="outline">
                     <Star className="mr-2 h-4 w-4" />
                     Đánh giá người mua
